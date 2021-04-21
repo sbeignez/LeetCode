@@ -10,3 +10,12 @@ class Solution:
                     t[row-1][col-1] if col > 0 else inf,
                 )
         return min(t[-1])
+    
+    def minimumTotal(self, t: List[List[int]]) -> int:
+            for row in range(1, len(t)):
+            for col in range(row+1):
+                t[row][col] += min(
+                    t[row-1][min(col,row-1)],
+                    t[row-1][max(col-1,0)],
+                    )
+        return min(t[-1])
