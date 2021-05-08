@@ -1,2 +1,6 @@
+# Jekill Configuration
 theme: jekyll-theme-minimal
 title: sbeignez home page
+url: https://sbeignez.github.io/LeetCode/
+
+markdown: kramdown
