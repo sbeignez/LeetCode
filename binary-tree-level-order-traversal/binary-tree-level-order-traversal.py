@@ -9,19 +9,18 @@ from collections import deque
 
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
-        # null case
-        if not root: return []
-        
-        # Answer and Level
         A = []
+        if not root: return A
+    
         D = deque([root])
         
         while len(D):
             L = []
-            for x in range(len(D)):
+            for _ in range(len(D)):
                 node = D.popleft()
                 L.append(node.val)
-                D.extend( [ n for n in [node.left, node.right] if n])
+                if node.left: D.append(node.left)
+                if node.right: D.append(node.right)
             A.append(L)
         return A  
             
