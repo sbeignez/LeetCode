@@ -11,18 +11,20 @@ tests = [
 print("TESTS", tests)
 
 def testing(f,tests):
-    print("======================")
+    print("  ======================")
     success = True
     for i, test in enumerate(tests):
         args = test[:-1]
         expected = test[-1]
-        print("-----------------------")
-        print(f"Test {i}: {args} --> {expected}.")
+
+        print(f"  Test {i}: {args} --> {expected}.")
         res = f(*args)
         success = success and res==expected
-        print(f"{res==expected}\t OUT:{res}\t EXP:{expected}\t IN:{args}\t ")
-    print("======================")
-    print(f"Success: {success}")
+        print(f"  {res==expected}\t OUT:{res}\t EXP:{expected}\t IN:{args}\t ")
+        print("  -----------------------")
+    print(f"  Success: {success}")
+    print("  ======================")
+
 
 # =============================
 import itertools
